@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import AppLogoIcon from '@/components/AppLogoIcon.vue';
 import { Link, usePage } from '@inertiajs/vue3';
+import zrEmpireImage from '@/assets/zr_empire.png';
 
 const page = usePage();
 const name = page.props.name;
@@ -20,6 +21,12 @@ defineProps<{
                 <AppLogoIcon class="mr-2 size-8 fill-current text-white" />
                 {{ name }}
             </Link>
+            
+            <!-- Imagen centrada con tamaño controlado -->
+            <div class="relative z-20 flex justify-center items-center flex-grow">
+                <img :src="zrEmpireImage" alt="ZR Empire" class="max-w-xs w-4/5 h-auto" />
+            </div>
+            
             <div v-if="quote" class="relative z-20 mt-auto">
                 <blockquote class="space-y-2">
                     <p class="text-lg">&ldquo;{{ quote.message }}&rdquo;</p>
